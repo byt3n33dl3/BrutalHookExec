@@ -43,6 +43,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] Keylogger
 - [x] Take Screenshot
 - [x] Webcam Capture
+- [x] Sniffing
 - [x] Persistence
 
 ## Tested On
