@@ -1,5 +1,5 @@
 # Common types of malware include Spyware
-----------------------------------------------------------------------------------------------
+
 ## Discontinued
 
 I decided to discontinue the development of this tool to concentrate my efforts on others one projects.
