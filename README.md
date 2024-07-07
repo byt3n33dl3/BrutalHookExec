@@ -7,24 +7,24 @@
 made with love by: github.com/pxcs - p3xsouger - contributor - Sulaiman                                                                       
 ```
 
-# Main features:
+## Main features:
  - many of @OneOfEleven mods, including AM fix
  - @fagci spectrum analyzer (**F+5** to turn on)
  - @RE3CON multiband full freq ranges 14 MHz - 1789 MHz
  - @pxcs make a multi attack ( arsenal-mode )
 
-# Radio performance
+## Radio performance
 
-Please note that the Quansheng UV-Kx radios are not professional quality transceivers, their
+Please note that the Quansheng `BrutalHookExec` are not professional quality transceivers, their
 performance is strictly limited. The RX front end has no track-tuned band pass filtering
 at all, and so are wide band/wide open to any and all signals over a large frequency range.<br />
 
-# User customization
+## User customization
 
 You can customize the firmware by enabling/disabling various compile options, this allows
 us to remove certain firmware features in order to make room in the flash for others.
-<br />
-You'll find the options at the top of "Makefile" ('0' = disable, '1' = enable) ..
+<br>
+You'll find the `options` at the top of "Makefile" ('0' = disable, '1' = enable) ..
 
 ```
 ENABLE_CLANG                  := 0     **experimental, builds with clang instead of gcc (LTO will be disabled if you enable this)
@@ -64,50 +64,53 @@ ENABLE_COPY_CHAN_TO_VFO       := 1       copy current channel into the other VFO
 #ENABLE_BAND_SCOPE            := 1       not yet implemented - spectrum/pan-adapter
 ```
 
-# Compiler
+## Compiler
 
 arm-none-eabi GCC version 10.3.1 is recommended, which is the current version on Ubuntu 22.04.03 LTS.
 Other versions may generate a flash file that is too big.
-You can get an appropriate version from: [https://developer.arm.com/downloads/-/gnu-rm](https://developer.arm.com/downloads/-/gnu-rm)
+You can get an appropriate version from: [@](https://developer.arm.com/downloads/-/gnu-rm)
 
 clang may be used but isn't fully supported. Resulting binaries may also be bigger.
-You can get it from: [https://releases.llvm.org/download.html](https://releases.llvm.org/download.html)
+You can get it from: [@](https://releases.llvm.org/download.html)
 
-# Building
+## Building
 
 If you have docker installed you can use `compile-with-docker.bat`, the output files are created in `compiled-firmware` folder. This method gives significantly smaller binaries, I've seen differences up to 1kb, so it can fit more functionalities this way. The challange can be (or not) installing the docker itself.
 
-
-To compile directly in windows:
+## To compile directly in windows:
 
 [Download latest Source Code](https://github.com/RE3CON/uv-k5-firmware-custom/archive/refs/heads/main.zip)
 
 1. Open windows command line and run:
-    ```
+    ```powershell
     winget install -e -h git.git Python.Python.3.8 GnuWin32.Make
-    winget install -e -h Arm.GnuArmEmbeddedToolchain -v "10 2021.10"
+    winget install -e -h Arm.GnuArmEmbeddedToolchain -v "1.1.1.1"
     ```
+
 2. Close command line, open a new one and run:
-    ```
+    ```powershell
     pip install --user --upgrade pip
     pip install crcmod
+    
     mkdir c:\projects & cd /D c:/projects
-    git clone [https://github.com/re3con/uv-k5-firmware-custom.git](https://github.com/re3con/uv-k5-firmware-custom.git)
+    git clone https://github.com/pxcs/BrutalHookExec.git
     ```
-3. From now on you can build the firmware by going to `c:\projects\uv-k5-firmware-custom` and running `win_make.bat` or by running a command line:
-    ```
-    cd /D c:\projects\uv-k5-firmware-custom
+3. From now on you can build the firmware by going to `c:\projects\BrutalHookExec` and running `cd config` `cd src` `win_make.bat` or by running a command line:
+    ```powershell
+    cd /D c:\projects\BrutalHookExec
+    cd config then cd src
     win_make.bat
     ```
-4. To reset the repository and pull new changes run (!!! it will delete all your changes !!!):
-    ```
-    cd /D c:\projects\uv-k5-firmware-custom
+4. To reset the repository and pull new changes run:
+    ```powershell
+    cd /D c:\projects\BrutalHookExec
     git reset --hard & git clean -fd & git pull
     ```
 
+<br>
 I've left some notes in the win_make.bat file to maybe help with stuff.
 
-# Credits
+## Credits
 
 Many thanks to various people on Telegram for putting up with me during this effort and helping:
 
@@ -125,7 +128,7 @@ Many thanks to various people on Telegram for putting up with me during this eff
 * @Ismo OH2FTG
 * @d1ced95
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+> THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
 DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
